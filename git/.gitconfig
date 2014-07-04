@@ -1,0 +1,22 @@
+[ui]
+	core = true
+[color]
+	ui = auto
+[core]
+	editor = vim
+[user]
+	name = Marcelo Lima
+	email = mcdlima@gmail.com
+[mergetool "gvim"]
+	cmd = gvim $MERGED
+[alias]
+	ch = checkout
+	br = branch
+	st = status
+    tree = log --color --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit
+[rerere]
+	enabled = 1
+	autoupdate = true
+[mergetool]
+	keepBackup = false
+

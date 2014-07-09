@@ -14,3 +14,4 @@ install-tmux:
 	rm -f ~/.tmux.conf
 	ln -s `pwd`/tmux/tmux.conf ~/.tmux.conf
 	tmux source-file ~/.tmux.conf
+

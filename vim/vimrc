@@ -9,10 +9,10 @@ Plugin 'bling/vim-airline'
 Plugin 'tpope/vim-fugitive'
 Plugin 'scrooloose/nerdtree'
 Plugin 'terryma/vim-multiple-cursors'
+" Plugin 'valloric/youcompleteme'
 
 " Nodejs Plugins
 Plugin 'moll/vim-node'
-Plugin 'myhere/vim-nodejs-complete'
 
 call vundle#end()
 filetype plugin indent on

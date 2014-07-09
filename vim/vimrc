@@ -45,4 +45,7 @@ au BufReadPost * if &ft != "gitcommit" && line("'\"") > 1 && line("'\"") <= line
 set hlsearch
 
 " Show matching brackets when text indicator is over them
-set showmatch 
+set showmatch
+
+" Set utf8 as standard encoding and en_US as the standard language
+set encoding=utf8

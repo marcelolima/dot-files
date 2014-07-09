@@ -17,8 +17,25 @@ filetype plugin indent on
 
 syntax on
 
-" Fix problems with backspace
+set autoindent
+
+" Fix problems with backspace:
 set backspace=indent,eol,start
+
+"Lowercase = case insensitive, any uppercase = case sensitive:
+set smartcase
+
+" Highlight search results:
+set hlsearch
+
+" Show matching brackets when text indicator is over them:
+set showmatch
+
+" Set utf8 as standard encoding and en_US as the standard language:
+set encoding=utf8
+
+" Enable mouse:
+set mouse=a
 
 " Autoreload .vimrc on save
 augroup AutoReloadVimRC
@@ -35,17 +52,7 @@ else
 	set number
 endif
 
-" Enable mouse
-set mouse=a
-
 " Jump to last position on re-open
 au BufReadPost * if &ft != "gitcommit" && line("'\"") > 1 && line("'\"") <= line("$") | exe "normal! g`\"" | endif
 
-" Highlight search results
-set hlsearch
 
-" Show matching brackets when text indicator is over them
-set showmatch
-
-" Set utf8 as standard encoding and en_US as the standard language
-set encoding=utf8

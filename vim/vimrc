@@ -36,5 +36,6 @@ else
 	set number
 endif
 
-set mouse=a       " mouse everywhere
+" Enable mouse
+set mouse=a
 

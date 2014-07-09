@@ -27,7 +27,6 @@ augroup AutoReloadVimRC
 	au BufWritePost $MYVIMRC so $MYVIMRC
 augroup END
 
-
 " Show line number
 if version >= 703
 	set number          " show absolute line number for the current line

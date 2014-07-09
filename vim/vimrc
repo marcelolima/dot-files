@@ -17,6 +17,7 @@ Plugin 'myhere/vim-nodejs-complete'
 call vundle#end()
 filetype plugin indent on
 
+" Vim-airline
 set t_Co=256
 set laststatus=2
 let g:airline_theme = 'murmur'

@@ -24,7 +24,7 @@ let g:airline_theme = 'murmur'
 
 syntax on
 set autoindent
-set history=700
+set history=1000
 
 " toggle between modes almost instantly
 set ttimeoutlen=0

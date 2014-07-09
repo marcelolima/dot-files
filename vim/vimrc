@@ -26,7 +26,19 @@ syntax on
 set autoindent
 set history=700
 
-" Fix problems with backspace:
+" toggle between modes almost instantly
+set ttimeoutlen=0
+
+" update file edited outside vim
+set autoread
+
+" Show white line in cursor
+set cursorline
+
+" set the terminal title to the current file
+set title
+
+" allow backspacing over everything in insert mode
 set backspace=indent,eol,start
 
 "Lowercase = case insensitive, any uppercase = case sensitive:

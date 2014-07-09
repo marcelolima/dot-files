@@ -40,3 +40,6 @@ set mouse=a
 
 " Jump to last position on re-open
 au BufReadPost * if &ft != "gitcommit" && line("'\"") > 1 && line("'\"") <= line("$") | exe "normal! g`\"" | endif
+
+" Highlight search results
+set hlsearch

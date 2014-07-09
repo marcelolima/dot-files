@@ -17,3 +17,5 @@ filetype plugin indent on
 
 syntax on
 
+" Fix problems with backspace
+set backspace=indent,eol,start

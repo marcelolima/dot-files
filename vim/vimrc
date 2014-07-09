@@ -5,6 +5,8 @@ set rtp+=~/.vim/bundle/Vundle.vim
 call vundle#begin()
 
 Plugin 'gmarik/Vundle.vim'
+Plugin 'bling/vim-airline'
+Plugin 'tpope/vim-fugitive'
 Plugin 'scrooloose/nerdtree'
 Plugin 'terryma/vim-multiple-cursors'
 
@@ -15,9 +17,13 @@ Plugin 'myhere/vim-nodejs-complete'
 call vundle#end()
 filetype plugin indent on
 
-syntax on
+set t_Co=256
+set laststatus=2
+let g:airline_theme = 'murmur'
 
+syntax on
 set autoindent
+set history=700
 
 " Fix problems with backspace:
 set backspace=indent,eol,start
@@ -37,6 +43,11 @@ set encoding=utf8
 " Enable mouse:
 set mouse=a
 
+" No annoying sound on errors
+set noerrorbells
+set novisualbell
+set tm=500
+
 " Autoreload .vimrc on save
 augroup AutoReloadVimRC
 	au!
@@ -54,5 +65,4 @@ endif
 
 " Jump to last position on re-open
 au BufReadPost * if &ft != "gitcommit" && line("'\"") > 1 && line("'\"") <= line("$") | exe "normal! g`\"" | endif
-
 

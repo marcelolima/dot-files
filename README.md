@@ -1,1 +1,2 @@
-My DotFiles
+My dotfiles for vim, git and tmux
+

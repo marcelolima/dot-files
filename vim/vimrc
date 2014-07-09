@@ -49,7 +49,7 @@ set hlsearch
 hi Search cterm=NONE ctermfg=grey ctermbg=blue
 
 " Remove highlighted results with F3
-nnoremap <F3> :set hlsearch!<CR>
+nnoremap <backspace> :set hlsearch!<CR>
 
 " show search results as you type
 set incsearch

@@ -19,3 +19,10 @@ syntax on
 
 " Fix problems with backspace
 set backspace=indent,eol,start
+
+" Autoreload .vimrc on save
+augroup AutoReloadVimRC
+	au!
+	" automatically reload vimrc when it's saved
+	au BufWritePost $MYVIMRC so $MYVIMRC
+augroup END

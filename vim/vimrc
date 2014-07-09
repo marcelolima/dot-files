@@ -26,3 +26,13 @@ augroup AutoReloadVimRC
 	" automatically reload vimrc when it's saved
 	au BufWritePost $MYVIMRC so $MYVIMRC
 augroup END
+
+
+" Show line number
+if version >= 703
+	set number          " show absolute line number for the current line
+	set relativenumber  " show line number relative to current position
+else
+	set number
+endif
+

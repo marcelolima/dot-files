@@ -48,9 +48,6 @@ set smartcase
 set hlsearch
 hi Search cterm=NONE ctermfg=grey ctermbg=blue
 
-" Remove highlighted results with F3
-nnoremap <backspace> :set hlsearch!<CR>
-
 " show search results as you type
 set incsearch
 
@@ -67,6 +64,9 @@ set mouse=a
 set noerrorbells
 set novisualbell
 set tm=500
+
+" Map :noh command to F3
+map <F3> :noh <CR>
 
 " Autoreload .vimrc on save
 augroup AutoReloadVimRC

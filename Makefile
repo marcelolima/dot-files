@@ -8,8 +8,14 @@ install-vim:
 	mkdir -p ~/.vim_local/tmp ~/.vim_local/backup
 
 install-git:
-	rm -f ~/.gitconfig
+	rm -rf ~/.gitconfig ~/.git_template
 	ln -s `pwd`/git/gitconfig ~/.gitconfig
+	mkdir -p ~/.git_template/hooks
+	git config --global init.templatedir '~/.git_template'
+	ln -s `pwd`/git/ctags ~/.git_template/hooks/ctags
+	sudo chmod +x `pwd`/git/ctags
+	ln -s `pwd`/git/post-commit ~/.git_template/hooks/post-commit
+	sudo chmod +x `pwd`/git/post-commit
 
 install-tmux:
 	rm -f ~/.tmux.conf

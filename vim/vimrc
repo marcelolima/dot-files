@@ -74,6 +74,9 @@ map <F2> :NERDTreeToggle<CR>
 " Map :noh command to F3
 map <F3> :noh <CR>
 
+" reload all opened files pressing F5
+nmap <F5> :tabdo windo edit<CR>
+
 " Autoreload .vimrc on save
 augroup AutoReloadVimRC
 	au!

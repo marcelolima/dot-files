@@ -73,6 +73,7 @@ set backup
 set backupdir=~/.vim_local/backup
 set directory=~/.vim_local/tmp
 
+" Set tags file directory: '.git/tags'
 set tags="$(git rev-parse --show-toplevel)/.git/tags"
 
 " show/hide NERDTree pressing F2

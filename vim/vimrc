@@ -68,6 +68,9 @@ set noerrorbells
 set novisualbell
 set tm=500
 
+" show/hide NERDTree pressing F2
+map <F2> :NERDTreeToggle<CR>
+
 " Map :noh command to F3
 map <F3> :noh <CR>
 

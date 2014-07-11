@@ -73,6 +73,8 @@ set backup
 set backupdir=~/.vim_local/backup
 set directory=~/.vim_local/tmp
 
+set tags="$(git rev-parse --show-toplevel)/.git/tags"
+
 " show/hide NERDTree pressing F2
 map <F2> :NERDTreeToggle<CR>
 

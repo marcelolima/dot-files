@@ -10,6 +10,7 @@ Plugin 'tpope/vim-fugitive'
 Plugin 'scrooloose/nerdtree'
 Plugin 'terryma/vim-multiple-cursors'
 " Plugin 'valloric/youcompleteme'
+Plugin 'majutsushi/tagbar'
 
 " Nodejs Plugins
 Plugin 'moll/vim-node'
@@ -84,6 +85,9 @@ map <F3> :noh <CR>
 
 " reload all opened files pressing F5
 nmap <F5> :tabdo windo edit<CR>
+
+" Toggle tagbar with F8
+nmap <F8> :TagbarToggle<CR>
 
 " Autoreload .vimrc on save
 augroup AutoReloadVimRC

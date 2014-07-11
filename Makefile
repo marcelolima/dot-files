@@ -5,6 +5,7 @@ install-vim:
 	mkdir ~/.vim
 	git clone https://github.com/gmarik/Vundle.vim.git ~/.vim/bundle/Vundle.vim
 	ln -s `pwd`/vim/vimrc ~/.vimrc
+	mkdir -p ~/.vim_local/tmp ~/.vim_local/backup
 
 install-git:
 	rm -f ~/.gitconfig

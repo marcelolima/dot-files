@@ -68,6 +68,11 @@ set noerrorbells
 set novisualbell
 set tm=500
 
+" keep a backup file in a separate directory
+set backup
+set backupdir=~/.vim_local/backup
+set directory=~/.vim_local/tmp
+
 " show/hide NERDTree pressing F2
 map <F2> :NERDTreeToggle<CR>
 

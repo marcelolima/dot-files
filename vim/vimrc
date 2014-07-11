@@ -60,6 +60,9 @@ set encoding=utf8
 " Enable mouse:
 set mouse=a
 
+" show options in command mode pressing tab
+set wildmenu
+
 " No annoying sound on errors
 set noerrorbells
 set novisualbell

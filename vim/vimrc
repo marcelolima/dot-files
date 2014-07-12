@@ -11,6 +11,7 @@ Plugin 'scrooloose/nerdtree'
 Plugin 'terryma/vim-multiple-cursors'
 " Plugin 'valloric/youcompleteme'
 Plugin 'majutsushi/tagbar'
+Plugin 'bronson/vim-trailing-whitespace'
 
 " Nodejs Plugins
 Plugin 'moll/vim-node'

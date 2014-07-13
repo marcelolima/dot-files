@@ -78,6 +78,10 @@ set directory=~/.vim_local/tmp
 " Set tags file directory: '.git/tags'
 set tags="$(git rev-parse --show-toplevel)/.git/tags"
 
+" Use C-f to search
+map <C-f> /
+map! <C-f> <Esc>/
+
 " show/hide NERDTree pressing F2
 map <F2> :NERDTreeToggle<CR>
 

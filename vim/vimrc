@@ -82,7 +82,8 @@ set tags="$(git rev-parse --show-toplevel)/.git/tags"
 map <F2> :NERDTreeToggle<CR>
 
 " Map :noh command to F3
-map <F3> :noh <CR>
+map <F3> :noh<CR>
+map! <F3> <Esc>:noh<CR>i
 
 " reload all opened files pressing F5
 nmap <F5> :tabdo windo edit<CR>

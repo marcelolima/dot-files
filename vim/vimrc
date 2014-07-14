@@ -12,6 +12,7 @@ Plugin 'terryma/vim-multiple-cursors'
 " Plugin 'valloric/youcompleteme'
 Plugin 'majutsushi/tagbar'
 Plugin 'bronson/vim-trailing-whitespace'
+Plugin 'vim-scripts/EasyGrep'
 
 " Nodejs Plugins
 Plugin 'moll/vim-node'

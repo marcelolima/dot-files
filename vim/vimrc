@@ -76,10 +76,10 @@ set noerrorbells
 set novisualbell
 set tm=500
 
-" keep a backup file in a separate directory
-set backup
-set backupdir=~/.vim_local/backup
-set directory=~/.vim_local/tmp
+" Turn backup off
+set nobackup
+set nowb
+set noswapfile
 
 " Set tags file directory: '.git/tags'
 set tags="$(git rev-parse --show-toplevel)/.git/tags"

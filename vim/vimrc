@@ -13,6 +13,7 @@ Plugin 'terryma/vim-multiple-cursors'
 Plugin 'majutsushi/tagbar'
 Plugin 'bronson/vim-trailing-whitespace'
 Plugin 'vim-scripts/EasyGrep'
+Plugin 'vim-scripts/autocomplpop'
 
 " Nodejs Plugins
 Plugin 'moll/vim-node'
@@ -28,6 +29,10 @@ let g:airline_theme = 'murmur'
 syntax on
 set autoindent
 set history=1000
+
+" Enable omni completion
+set omnifunc=syntaxcomplete#Complete
+set completeopt=longest,menuone
 
 " toggle between modes almost instantly
 set ttimeoutlen=0
@@ -95,6 +100,15 @@ nmap <F5> :tabdo windo edit<CR>
 
 " Toggle tagbar with F8
 nmap <F8> :TagbarToggle<CR>
+
+" Enter key will simply the highlighted menu item in omnicompletion
+inoremap <expr> <CR> pumvisible() ? "\<C-y>" : "\<C-g>u\<CR>"
+
+" keeps a menu item always highlighted
+inoremap <expr> <C-n> pumvisible() ? '<C-n>' :
+  \ '<C-n><C-r>=pumvisible() ? "\<lt>Down>" : ""<CR>'
+inoremap <expr> <M-,> pumvisible() ? '<C-n>' :
+  \ '<C-x><C-o><C-n><C-p><C-r>=pumvisible() ? "\<lt>Down>" : ""<CR>'
 
 " Autoreload .vimrc on save
 augroup AutoReloadVimRC

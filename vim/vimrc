@@ -15,6 +15,7 @@ Plugin 'bronson/vim-trailing-whitespace'
 Plugin 'vim-scripts/EasyGrep'
 Plugin 'vim-scripts/autocomplpop'
 Plugin 'vim-scripts/SearchComplete'
+Plugin 'noah/vim256-color'
 
 " Nodejs Plugins
 Plugin 'moll/vim-node'
@@ -22,8 +23,11 @@ Plugin 'moll/vim-node'
 call vundle#end()
 filetype plugin indent on
 
-" Vim-airline
+" Set colorscheme
 set t_Co=256
+colorscheme leo
+
+" Vim-airline
 set laststatus=2
 let g:airline_theme = 'murmur'
 
@@ -94,7 +98,7 @@ map! <C-f> <Esc>/
 
 " Set ColorColumn
 set cc=81
-hi ColorColumn ctermbg=234
+hi ColorColumn ctermbg=235
 
 " show/hide NERDTree pressing F2
 map <F2> :NERDTreeToggle<CR>

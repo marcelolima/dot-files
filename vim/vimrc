@@ -47,6 +47,7 @@ set autoread
 
 " Show white line in cursor
 set cursorline
+hi CursorLine ctermbg=234
 
 " set the terminal title to the current file
 set title

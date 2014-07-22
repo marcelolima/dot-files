@@ -50,6 +50,9 @@ set cursorline
 hi CursorLine ctermbg=234
 hi CursorLineNr ctermfg=yellow
 
+" Set String background null
+hi String ctermbg=None
+
 " set the terminal title to the current file
 set title
 

@@ -16,6 +16,8 @@ Plugin 'vim-scripts/EasyGrep'
 Plugin 'vim-scripts/autocomplpop'
 Plugin 'vim-scripts/SearchComplete'
 Plugin 'noah/vim256-color'
+Plugin 'Raimondi/delimitMate'
+Plugin 'kevinw/pyflakes-vim'
 
 " Nodejs Plugins
 Plugin 'moll/vim-node'

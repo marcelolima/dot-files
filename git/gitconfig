@@ -7,11 +7,14 @@
 [mergetool "gvim"]
 	cmd = gvim $MERGED
 [alias]
-    ch = checkout
-    br = branch
-    st = status
+    co = checkout
+    c = commit
+    b = branch
+    s = status
     tree = log --color --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit
-    diffc = diff --cached
+    dc = diff --cached
+    d = diff
+    a = add
 [rerere]
 	enabled = 1
 	autoupdate = true

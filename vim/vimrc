@@ -16,6 +16,8 @@ Plugin 'vim-scripts/SearchComplete'
 Plugin 'Raimondi/delimitMate'
 Plugin 'kevinw/pyflakes-vim'
 Plugin 'vim-scripts/leo256'
+Plugin 'fs111/pydoc.vim'
+Plugin 'dkprice/vim-easygrep'
 
 " Nodejs Plugins
 Plugin 'moll/vim-node'

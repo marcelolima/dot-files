@@ -9,13 +9,16 @@
 [alias]
     co = checkout
     c = commit
+    cm = commit -m
     b = branch
     s = status
     tree = log --color --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit
     dc = diff --cached
     d = diff
     a = add
+    ap = add -p
     l = log
+    uc = reset HEAD~1
 [rerere]
 	enabled = 1
 	autoupdate = true

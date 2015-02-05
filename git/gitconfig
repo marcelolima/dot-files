@@ -19,6 +19,9 @@
     ap = add -p
     l = log
     uc = reset HEAD~1
+    cob = checkout -b
+    cp = cherry-pick
+    us = reset HEAD
 [rerere]
 	enabled = 1
 	autoupdate = true

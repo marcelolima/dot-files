@@ -12,7 +12,7 @@
     cm = commit -m
     b = branch
     s = status
-    tree = log --color --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit
+    t = log --color --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit
     dc = diff --cached
     d = diff
     a = add
@@ -22,6 +22,13 @@
     cob = checkout -b
     cp = cherry-pick
     us = reset HEAD
+    ca = commit --amend
+    lf = log --name-only
+    lp = log -p
+    ri = rebase -i
+    ls = log --stat
+    r = remote
+    rv = remote -v
 [rerere]
 	enabled = 1
 	autoupdate = true

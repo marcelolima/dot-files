@@ -18,6 +18,8 @@ Plugin 'kevinw/pyflakes-vim'
 Plugin 'vim-scripts/leo256'
 Plugin 'fs111/pydoc.vim'
 Plugin 'dkprice/vim-easygrep'
+Plugin 'scrooloose/syntastic'
+Plugin 'kien/ctrlp.vim'
 
 " Nodejs Plugins
 Plugin 'moll/vim-node'
@@ -144,4 +146,13 @@ set number          " show absolute line number for the current line
 
 " Jump to last position on re-open
 au BufReadPost * if &ft != "gitcommit" && line("'\"") > 1 && line("'\"") <= line("$") | exe "normal! g`\"" | endif
+
+set statusline+=%#warningmsg#
+set statusline+=%{SyntasticStatuslineFlag()}
+set statusline+=%*
+
+let g:syntastic_always_populate_loc_list = 1
+let g:syntastic_auto_loc_list = 1
+let g:syntastic_check_on_open = 1
+let g:syntastic_check_on_wq = 0
 

@@ -29,6 +29,7 @@
     ls = log --stat
     r = remote
     rv = remote -v
+    pr = pull --rebase
 [rerere]
 	enabled = 1
 	autoupdate = true

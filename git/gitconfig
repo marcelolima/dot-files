@@ -27,10 +27,12 @@
     lp = log -p
     ri = rebase -i
     ls = log --stat
-    r = remote
+    r = rebase
     rv = remote -v
     pr = pull --rebase
     su = branch -u
+    rl = reflog
+
 [rerere]
 	enabled = 1
 	autoupdate = true

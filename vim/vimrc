@@ -18,7 +18,6 @@ Plugin 'kevinw/pyflakes-vim'
 Plugin 'vim-scripts/leo256'
 Plugin 'fs111/pydoc.vim'
 Plugin 'dkprice/vim-easygrep'
-Plugin 'scrooloose/syntastic'
 Plugin 'kien/ctrlp.vim'
 
 " Nodejs Plugins
@@ -85,6 +84,9 @@ set smarttab
 set tabstop=4
 set shiftwidth=4
 set expandtab
+
+" Ignore files from .gitignore on ctrlp plugin
+let g:ctrlp_user_command = ['.git/', 'git --git-dir=%s/.git ls-files -oc --exclude-standard']
 
 " Set utf8 as standard encoding and en_US as the standard language:
 set encoding=utf8

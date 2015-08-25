@@ -11,17 +11,17 @@ Plugin 'scrooloose/nerdtree'
 Plugin 'terryma/vim-multiple-cursors'
 Plugin 'majutsushi/tagbar'
 Plugin 'bronson/vim-trailing-whitespace'
-Plugin 'vim-scripts/autocomplpop'
-Plugin 'vim-scripts/SearchComplete'
 Plugin 'Raimondi/delimitMate'
 Plugin 'kevinw/pyflakes-vim'
 Plugin 'vim-scripts/leo256'
 Plugin 'fs111/pydoc.vim'
 Plugin 'dkprice/vim-easygrep'
 Plugin 'kien/ctrlp.vim'
+Plugin 'nvie/vim-flake8'
+Plugin 'davidhalter/jedi-vim'
 
-" Nodejs Plugins
-Plugin 'moll/vim-node'
+"Plugin 'vim-scripts/autocomplpop'
+"Plugin 'vim-scripts/SearchComplete'
 
 call vundle#end()
 filetype plugin indent on
@@ -47,6 +47,8 @@ set ttimeoutlen=0
 
 " update file edited outside vim
 set autoread
+
+"autocmd BufWritePost *.py call Flake8()
 
 " Show white line in cursor
 set cursorline

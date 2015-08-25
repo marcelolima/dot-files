@@ -1,3 +1,6 @@
+[core]
+    name = Marcelo Lima
+    email = mcdlima@gmail.com
 [ui]
 	core = true
 [color]

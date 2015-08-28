@@ -35,7 +35,7 @@
     pr = pull --rebase
     su = branch -u
     rl = reflog
-
+    rh = reset --hard
 [rerere]
 	enabled = 1
 	autoupdate = true

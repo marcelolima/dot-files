@@ -8,6 +8,7 @@ install-vim:
 	mkdir -p ~/.vim_local/tmp ~/.vim_local/backup
 
 install-git:
+	echo 'alias g=git' >> ~/.bashrc
 	rm -rf ~/.gitconfig ~/.git_template
 	ln -s `pwd`/git/gitconfig ~/.gitconfig
 	mkdir -p ~/.git_template/hooks

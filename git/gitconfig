@@ -36,6 +36,8 @@
     su = branch -u
     rl = reflog
     rh = reset --hard
+    pl = pull
+    ps = push
 [rerere]
 	enabled = 1
 	autoupdate = true

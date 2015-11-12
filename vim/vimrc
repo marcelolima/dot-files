@@ -18,10 +18,9 @@ Plugin 'fs111/pydoc.vim'
 Plugin 'dkprice/vim-easygrep'
 Plugin 'kien/ctrlp.vim'
 Plugin 'nvie/vim-flake8'
-Plugin 'davidhalter/jedi-vim'
-
-"Plugin 'vim-scripts/autocomplpop'
-"Plugin 'vim-scripts/SearchComplete'
+Plugin 'vim-scripts/autocomplpop'
+Plugin 'vim-scripts/SearchComplete'
+Plugin 'fatih/vim-go'
 
 call vundle#end()
 filetype plugin indent on

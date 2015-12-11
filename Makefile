@@ -1,6 +1,7 @@
 install: install-vim install-git install-tmux install-autojump
 
 install-vim:
+	echo 'alias v=vim' >> ~/.bashrc
 	rm -rf ~/.vim ~/.vimrc
 	mkdir ~/.vim
 	git clone https://github.com/gmarik/Vundle.vim.git ~/.vim/bundle/Vundle.vim
@@ -19,9 +20,10 @@ install-git:
 	sudo chmod +x `pwd`/git/post-commit
 
 install-autojump:
-	git clone https://github.com/wting/autojump.git /tmp
-	python /tmp/autojump/install.py
+	git clone https://github.com/wting/autojump.git /tmp/autojump
+	cd /tmp/autojump/; python install.py
 	echo "[[ -s ~/.autojump/etc/profile.d/autojump.sh ]] && source ~/.autojump/etc/profile.d/autojump.sh" >> ~/.bashrc
+	source ~/.bashrc
 
 install-tmux:
 	rm -f ~/.tmux.conf

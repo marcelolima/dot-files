@@ -21,6 +21,7 @@ Plugin 'nvie/vim-flake8'
 Plugin 'vim-scripts/autocomplpop'
 Plugin 'vim-scripts/SearchComplete'
 Plugin 'fatih/vim-go'
+Plugin 'vim-airline/vim-airline-themes'
 
 call vundle#end()
 filetype plugin indent on
@@ -28,6 +29,9 @@ filetype plugin indent on
 " Set colorscheme
 set t_Co=256
 colorscheme leo
+
+" Set selection exclusive
+set selection=exclusive
 
 " Vim-airline
 set laststatus=2

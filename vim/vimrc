@@ -22,16 +22,20 @@ Plugin 'vim-scripts/autocomplpop'
 Plugin 'vim-scripts/SearchComplete'
 Plugin 'fatih/vim-go'
 Plugin 'vim-airline/vim-airline-themes'
+Plugin 'scrooloose/syntastic'
 
 call vundle#end()
 filetype plugin indent on
 
+" Tab and space config
+set tabstop=4
+set softtabstop=4
+set shiftwidth=4
+set expandtab
+
 " Set colorscheme
 set t_Co=256
 colorscheme leo
-
-" Set selection exclusive
-set selection=exclusive
 
 " Vim-airline
 set laststatus=2
@@ -86,9 +90,8 @@ set showmatch
 
 " Smart tab
 set smarttab
-set tabstop=4
-set shiftwidth=4
-set expandtab
+"set tabstop=4
+"set shiftwidth=4
 
 " Ignore files from .gitignore on ctrlp plugin
 let g:ctrlp_user_command = ['.git/', 'git --git-dir=%s/.git ls-files -oc --exclude-standard']
@@ -162,4 +165,6 @@ let g:syntastic_always_populate_loc_list = 1
 let g:syntastic_auto_loc_list = 1
 let g:syntastic_check_on_open = 1
 let g:syntastic_check_on_wq = 0
+
+nnoremap <C-w>E :SyntasticCheck<CR> :SyntasticToggleMode<CR>
 

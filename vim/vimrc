@@ -18,11 +18,11 @@ Plugin 'fs111/pydoc.vim'
 Plugin 'dkprice/vim-easygrep'
 Plugin 'kien/ctrlp.vim'
 Plugin 'nvie/vim-flake8'
-Plugin 'vim-scripts/autocomplpop'
-Plugin 'vim-scripts/SearchComplete'
 Plugin 'fatih/vim-go'
 Plugin 'vim-airline/vim-airline-themes'
 Plugin 'scrooloose/syntastic'
+Plugin 'nsf/gocode', {'rtp': 'vim/'}
+Plugin 'Valloric/YouCompleteMe.git'
 
 call vundle#end()
 filetype plugin indent on
@@ -46,8 +46,8 @@ set autoindent
 set history=1000
 
 " Enable omni completion
-set omnifunc=syntaxcomplete#Complete
-set completeopt=longest,menuone
+"set omnifunc=syntaxcomplete#Complete
+"set completeopt=longest,menuone
 
 " toggle between modes almost instantly
 set ttimeoutlen=0
@@ -136,7 +136,7 @@ nmap <F5> :tabdo windo edit<CR>
 nmap <F8> :TagbarToggle<CR>
 
 " Enter key will simply the highlighted menu item in omnicompletion
-inoremap <expr> <CR> pumvisible() ? "\<C-y>" : "\<C-g>u\<CR>"
+"inoremap <expr> <CR> pumvisible() ? "\<C-y>" : "\<C-g>u\<CR>"
 
 " keeps a menu item always highlighted
 inoremap <expr> <C-n> pumvisible() ? '<C-n>' :
@@ -167,4 +167,38 @@ let g:syntastic_check_on_open = 1
 let g:syntastic_check_on_wq = 0
 
 nnoremap <C-w>E :SyntasticCheck<CR> :SyntasticToggleMode<CR>
+
+" GO SETTINGS
+" syntax-highlighting for Functions, Methods and Structs is disabled. To change it:
+let g:go_highlight_functions = 1
+let g:go_highlight_methods = 1
+let g:go_highlight_structs = 1
+let g:go_highlight_interfaces = 1
+let g:go_highlight_operators = 1
+let g:go_highlight_build_constraints = 1
+
+" Enable goimports to automatically insert import paths instead of gofmt:
+let g:go_fmt_command = "goimports"
+
+" By default vim-go shows errors for the fmt command, to disable it:
+let g:go_fmt_fail_silently = 1
+
+au FileType go nmap <leader>r :w<cr>:GoRun<cr>
+"<Plug>(go-run)
+au FileType go nmap <leader>b <Plug>(go-build)
+au FileType go nmap <leader>t <Plug>(go-test)
+au FileType go nmap <leader>c <Plug>(go-coverage)
+au FileType go nmap <Leader>ds <Plug>(go-def-split)
+au FileType go nmap <Leader>dv <Plug>(go-def-vertical)
+au FileType go nmap <Leader>dt <Plug>(go-def-tab)
+au FileType go nmap <Leader>gd <Plug>(go-doc)
+au FileType go nmap <Leader>gv <Plug>(go-doc-vertical)
+au FileType go nmap <Leader>gb <Plug>(go-doc-browser)
+au FileType go nmap <Leader>s <Plug>(go-implements)
+
+au FileType go nmap <Leader>i <Plug>(go-info)
+
+let mapleader = " "
+let g:ycm_autoclose_preview_window_after_insertion = 1
+let g:ycm_autoclose_preview_window_after_completion = 1
 

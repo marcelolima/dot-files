@@ -1,4 +1,4 @@
-install: install-vim install-git install-tmux install-autojump
+install: install-vim install-git install-autojump install-tmux
 
 install-vim:
 	echo 'alias v=vim' >> ~/.bashrc

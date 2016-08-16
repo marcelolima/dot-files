@@ -25,28 +25,48 @@ Plugin 'nsf/gocode', {'rtp': 'vim/'}
 Plugin 'Valloric/YouCompleteMe.git'
 Plugin 'SirVer/ultisnips'
 Plugin 'honza/vim-snippets'
+Plugin 'vim-scripts/indentpython.vim'
+Plugin 'jnurmine/Zenburn'
 
 call vundle#end()
 filetype plugin indent on
+syntax on
 
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+"""""""""""""""""""""""""""" GENERAL SETTINGS """""""""""""""""""""""""""""""""
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" Set <leader> hotkey as space
+let mapleader = " "
 
-" Tab and space config
+" Show line number
+set number
+
+" Set history
+set history=1000
+
+" Set utf8 as standard encoding and en_US as the standard language:
+set encoding=utf8
+
+" Set colorscheme
+colorscheme zenburn
+
+" Enable mouse:
+set mouse=a
+
+" Default settings (PEP8)
 set tabstop=4
 set softtabstop=4
 set shiftwidth=4
 set expandtab
-
-" Set colorscheme
-set t_Co=256
-colorscheme leo
-
-" Vim-airline
-set laststatus=2
-let g:airline_theme = 'murmur'
-
-syntax on
 set autoindent
-set history=1000
+set fileformat=unix
+let python_highlight_all=1
+
+" JS, HTML and CSS
+au BufNewFile,BufRead *.js, *.html, *.css
+    \ set tabstop=2
+    \ set softtabstop=2
+    \ set shiftwidth=2
 
 " toggle between modes almost instantly
 set ttimeoutlen=0
@@ -60,8 +80,8 @@ hi CursorLine ctermbg=234
 hi CursorLineNr ctermfg=yellow
 
 " Set ColorColumn
-set cc=81
-hi ColorColumn ctermbg=235
+set cc=80
+"hi ColorColumn ctermbg=235
 
 " Set String background null
 hi String ctermbg=None
@@ -88,14 +108,8 @@ set showmatch
 " Smart tab
 set smarttab
 
-" Ignore files from .gitignore on ctrlp plugin
-let g:ctrlp_user_command = ['.git/', 'git --git-dir=%s/.git ls-files -oc --exclude-standard']
-
-" Set utf8 as standard encoding and en_US as the standard language:
-set encoding=utf8
-
-" Enable mouse:
-set mouse=a
+" Jump to last position on re-open
+au BufReadPost * if &ft != "gitcommit" && line("'\"") > 1 && line("'\"") <= line("$") | exe "normal! g`\"" | endif
 
 " show options in command mode pressing tab
 set wildmenu
@@ -110,21 +124,12 @@ set nobackup
 set nowb
 set noswapfile
 
-" Set tags file directory: '.git/tags'
-set tags="$(git rev-parse --show-toplevel)/.git/tags"
-
-" show/hide NERDTree pressing F2
-map <F2> :NERDTreeToggle<CR>
-
 " Map :noh command to F3
 map <F3> :noh<CR>
 map! <F3> <Esc>:noh<CR>i
 
 " reload all opened files pressing F5
 nmap <F5> :tabdo windo edit<CR>
-
-" Toggle tagbar with F8
-nmap <F8> :TagbarToggle<CR>
 
 " keeps a menu item always highlighted
 inoremap <expr> <C-n> pumvisible() ? '<C-n>' :
@@ -139,25 +144,24 @@ augroup AutoReloadVimRC
 	au BufWritePost $MYVIMRC so $MYVIMRC
 augroup END
 
-" Show line number
-set number          " show absolute line number for the current line
 
-" Jump to last position on re-open
-au BufReadPost * if &ft != "gitcommit" && line("'\"") > 1 && line("'\"") <= line("$") | exe "normal! g`\"" | endif
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+"""""""""""""""""""""""""""""""" Syntastic """""""""""""""""""""""""""""""""""""
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+let g:syntastic_check_on_open = 0
+let g:syntastic_check_on_wq = 0
 
 set statusline+=%#warningmsg#
 set statusline+=%{SyntasticStatuslineFlag()}
 set statusline+=%*
 
-let g:syntastic_always_populate_loc_list = 1
-let g:syntastic_auto_loc_list = 1
-let g:syntastic_check_on_open = 0
-let g:syntastic_check_on_wq = 0
-
 nnoremap <C-w>E :SyntasticCheck<CR> :SyntasticToggleMode<CR>
 
-" GO SETTINGS
-" syntax-highlighting for Functions, Methods and Structs is disabled. To change it:
+
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+"""""""""""""""""""""""""""""""" GO SETTINGS """""""""""""""""""""""""""""""""""
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" syntax-highlighting for Functions, Methods and Structs is disabled.
 let g:go_highlight_functions = 1
 let g:go_highlight_methods = 1
 let g:go_highlight_structs = 1
@@ -183,11 +187,8 @@ au FileType go nmap <Leader>gd <Plug>(go-doc)
 au FileType go nmap <Leader>gv <Plug>(go-doc-vertical)
 au FileType go nmap <Leader>gb <Plug>(go-doc-browser)
 au FileType go nmap <Leader>s <Plug>(go-implements)
-
 au FileType go nmap <Leader>i <Plug>(go-info)
 
-" Set <leader> hotkey as space
-let mapleader = " "
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 """"""""""""""""""""""""""""""""" UltiSnips """""""""""""""""""""""""""""""""""
@@ -197,3 +198,64 @@ let g:UltiSnipsExpandTrigger = "<C-l>"
 let g:UltiSnipsJumpForwardTrigger = "<C-k>"
 let g:UltiSnipsJumpBackwardTrigger = "<C-j>"
 let g:UltiSnipsEditSplit="vertical"
+
+
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+"""""""""""""""""""""""""""""""" YouCompleteMe """""""""""""""""""""""""""""""""
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+let g:ycm_seed_identifiers_with_syntax = 1
+
+" close autocomplete window
+"let g:ycm_autoclose_preview_window_after_completion=1
+
+" shortcut for go to definition
+"map <leader>g  :YcmCompleter GoToDefinitionElseDeclaration<CR>
+
+
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+""""""""""""""""""""""""""""" VIRTUALENV SUPPORT """"""""""""""""""""""""""""""
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+"py << EOF
+"import os
+"import sys
+"if 'VIRTUAL_ENV' in os.environ:
+""  project_base_dir = os.environ['VIRTUAL_ENV']
+""  activate_this = os.path.join(project_base_dir, 'bin/activate_this.py')
+""  execfile(activate_this, dict(__file__=activate_this))
+"EOF
+
+
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+""""""""""""""""""""""""""""""""" NERD TREE """""""""""""""""""""""""""""""""""
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+let NERDTreeIgnore=['\.pyc$', '\~$']
+
+
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+""""""""""""""""""""""""""""""""" AIRLINE """""""""""""""""""""""""""""""""""""
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+set t_Co=256
+
+
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+"""""""""""""""""""""""""""""""""" NerdTree """""""""""""""""""""""""""""""""""
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" show/hide NERDTree pressing F2
+map <F2> :NERDTreeToggle<CR>
+
+
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+"""""""""""""""""""""""""""""""""""" CtrlP """"""""""""""""""""""""""""""""""""
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" Ignore files from .gitignore on ctrlp plugin
+let g:ctrlp_user_command = ['.git/', 'git --git-dir=%s/.git ls-files -oc --exclude-standard']
+
+
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+""""""""""""""""""""""""""""""""""" TagBar """"""""""""""""""""""""""""""""""""
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" Toggle tagbar with F8
+nmap <F8> :TagbarToggle<CR>
+
+" Set tags file directory: '.git/tags'
+set tags="$(git rev-parse --show-toplevel)/.git/tags"

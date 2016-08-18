@@ -5,7 +5,6 @@ set rtp+=~/.vim/bundle/Vundle.vim
 call vundle#begin()
 
 Plugin 'gmarik/Vundle.vim'
-Plugin 'bling/vim-airline'
 Plugin 'tpope/vim-fugitive'
 Plugin 'scrooloose/nerdtree'
 Plugin 'terryma/vim-multiple-cursors'
@@ -19,6 +18,7 @@ Plugin 'dkprice/vim-easygrep'
 Plugin 'kien/ctrlp.vim'
 Plugin 'nvie/vim-flake8'
 Plugin 'fatih/vim-go'
+Plugin 'vim-airline/vim-airline'
 Plugin 'vim-airline/vim-airline-themes'
 Plugin 'scrooloose/syntastic'
 Plugin 'nsf/gocode', {'rtp': 'vim/'}
@@ -26,11 +26,10 @@ Plugin 'Valloric/YouCompleteMe.git'
 Plugin 'SirVer/ultisnips'
 Plugin 'honza/vim-snippets'
 Plugin 'vim-scripts/indentpython.vim'
-Plugin 'jnurmine/Zenburn'
+Plugin 'w0ng/vim-hybrid'
 
 call vundle#end()
 filetype plugin indent on
-syntax on
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 """""""""""""""""""""""""""" GENERAL SETTINGS """""""""""""""""""""""""""""""""
@@ -48,7 +47,8 @@ set history=1000
 set encoding=utf8
 
 " Set colorscheme
-colorscheme zenburn
+set background=dark
+colorscheme hybrid
 
 " Enable mouse:
 set mouse=a
@@ -76,12 +76,12 @@ set autoread
 
 " Show white line in cursor
 set cursorline
-hi CursorLine ctermbg=234
+hi CursorLine ctermbg=235
 hi CursorLineNr ctermfg=yellow
 
 " Set ColorColumn
 set cc=80
-"hi ColorColumn ctermbg=235
+hi ColorColumn ctermbg=235
 
 " Set String background null
 hi String ctermbg=None
@@ -144,6 +144,7 @@ augroup AutoReloadVimRC
 	au BufWritePost $MYVIMRC so $MYVIMRC
 augroup END
 
+syntax on
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 """""""""""""""""""""""""""""""" Syntastic """""""""""""""""""""""""""""""""""""
@@ -206,23 +207,23 @@ let g:UltiSnipsEditSplit="vertical"
 let g:ycm_seed_identifiers_with_syntax = 1
 
 " close autocomplete window
-"let g:ycm_autoclose_preview_window_after_completion=1
+let g:ycm_autoclose_preview_window_after_completion=1
 
 " shortcut for go to definition
-"map <leader>g  :YcmCompleter GoToDefinitionElseDeclaration<CR>
+map <leader>d  :YcmCompleter GoToDefinitionElseDeclaration<CR>
 
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 """"""""""""""""""""""""""""" VIRTUALENV SUPPORT """"""""""""""""""""""""""""""
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-"py << EOF
-"import os
-"import sys
-"if 'VIRTUAL_ENV' in os.environ:
-""  project_base_dir = os.environ['VIRTUAL_ENV']
-""  activate_this = os.path.join(project_base_dir, 'bin/activate_this.py')
-""  execfile(activate_this, dict(__file__=activate_this))
-"EOF
+py << EOF
+import os
+import sys
+if 'VIRTUAL_ENV' in os.environ:
+  project_base_dir = os.environ['VIRTUAL_ENV']
+  activate_this = os.path.join(project_base_dir, 'bin/activate_this.py')
+  execfile(activate_this, dict(__file__=activate_this))
+EOF
 
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""

@@ -7,6 +7,8 @@ install-vim:
 	git clone https://github.com/gmarik/Vundle.vim.git ~/.vim/bundle/Vundle.vim
 	ln -s `pwd`/vim/vimrc ~/.vimrc
 	mkdir -p ~/.vim_local/tmp ~/.vim_local/backup
+	git clone https://github.com/powerline/fonts.git /tmp/fonts
+	sh /tmp/fonts/install.sh
 
 install-git:
 	echo 'alias g=git' >> ~/.bashrc

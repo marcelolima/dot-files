@@ -1,5 +1,8 @@
 install: install-vim install-git install-autojump install-tmux
 
+install-python-libraries:
+	pip install --user flake8
+
 install-vim:
 	echo 'alias v=vim' >> ~/.bashrc
 	rm -rf ~/.vim ~/.vimrc
@@ -9,6 +12,7 @@ install-vim:
 	mkdir -p ~/.vim_local/tmp ~/.vim_local/backup
 	git clone https://github.com/powerline/fonts.git /tmp/fonts
 	sh /tmp/fonts/install.sh
+	echo 'Set font terminal as Cousine Bold for Powerline'
 
 install-git:
 	echo 'alias g=git' >> ~/.bashrc

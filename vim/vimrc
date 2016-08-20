@@ -27,6 +27,7 @@ Plugin 'vim-scripts/indentpython.vim'
 Plugin 'w0ng/vim-hybrid'
 Plugin 'vim-airline/vim-airline'
 Plugin 'vim-airline/vim-airline-themes'
+Plugin 'Yggdroot/indentLine'
 
 
 call vundle#end()
@@ -157,6 +158,7 @@ set statusline+=%#warningmsg#
 set statusline+=%{SyntasticStatuslineFlag()}
 set statusline+=%*
 
+let g:syntastic_python_checkers = ['flake8']
 nnoremap <C-w>E :SyntasticCheck<CR> :SyntasticToggleMode<CR>
 
 
@@ -210,12 +212,15 @@ let g:ycm_seed_identifiers_with_syntax = 1
 " close autocomplete window
 let g:ycm_autoclose_preview_window_after_completion=1
 
+" Use python3
+let g:ycm_python_binary_path = '/usr/bin/python3'
+
 " shortcut for go to definition
 map <leader>d  :YcmCompleter GoToDefinitionElseDeclaration<CR>
 
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-""""""""""""""""""""""""""""" VIRTUALENV SUPPORT """"""""""""""""""""""""""""""
+""""""""""""""""""""""""""""" VirtualEnv Support """"""""""""""""""""""""""""""
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 py << EOF
 import os
@@ -228,14 +233,11 @@ EOF
 
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-""""""""""""""""""""""""""""""""" NERD TREE """""""""""""""""""""""""""""""""""
+""""""""""""""""""""""""""""""""" Airline """""""""""""""""""""""""""""""""""""
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-let NERDTreeIgnore=['\.pyc$', '\~$']
-
-
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-""""""""""""""""""""""""""""""""" AIRLINE """""""""""""""""""""""""""""""""""""
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+let g:airline_powerline_fonts = 1
+let g:airline_theme = 'ubaryd'
+set laststatus=2
 set t_Co=256
 
 
@@ -244,6 +246,8 @@ set t_Co=256
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " show/hide NERDTree pressing F2
 map <F2> :NERDTreeToggle<CR>
+
+let NERDTreeIgnore=['\.pyc$', '\~$']
 
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
@@ -261,3 +265,13 @@ nmap <F8> :TagbarToggle<CR>
 
 " Set tags file directory: '.git/tags'
 set tags="$(git rev-parse --show-toplevel)/.git/tags"
+
+
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+""""""""""""""""""""""""""""""""" identLine """""""""""""""""""""""""""""""""""
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+let g:indentLine_color_term = 236
+let g:indentLine_enabled = 1
+let g:indentLine_char = '┊'
+
+

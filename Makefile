@@ -1,7 +1,16 @@
 install: install-vim install-git install-autojump install-tmux
 
 install-python-libraries:
-	pip install --user flake8
+	pip install --user flake8 ipython[notebook]
+
+install-pyenv:
+	git clone https://github.com/yyuu/pyenv.git ~/.pyenv
+	echo 'export PYENV_ROOT="$$HOME/.pyenv"' >> ~/.bashrc
+	echo 'export PATH="$$PYENV_ROOT/bin:$$PATH"' >> ~/.bashrc
+	echo 'eval "$$(pyenv init -)"' >> ~/.bashrc
+	echo "Install dep from: https://github.com/yyuu/pyenv/wiki/Common-build-problems'"
+	~/.pyenv/bin/pyenv init -
+	~/.pyenv/bin/pyenv install 3.5.2
 
 install-vim:
 	echo 'alias v=vim' >> ~/.bashrc

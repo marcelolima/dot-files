@@ -28,7 +28,7 @@ Plugin 'vim-airline/vim-airline'
 Plugin 'vim-airline/vim-airline-themes'
 Plugin 'Yggdroot/indentLine'
 Plugin 'jmcantrell/vim-virtualenv'
-Plugin 'othree/eregex.vim'
+
 
 call vundle#end()
 filetype plugin indent on

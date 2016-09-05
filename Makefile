@@ -1,4 +1,4 @@
-install: install-vim install-git install-autojump install-tmux
+install: install-python-libraries install-pyenv install-vim install-git install-autojump install-tmux
 
 install-python-libraries:
 	pip install --user flake8 ipython[notebook]

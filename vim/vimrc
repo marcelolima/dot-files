@@ -204,21 +204,6 @@ let g:UltiSnipsJumpBackwardTrigger = "<C-j>"
 let g:UltiSnipsEditSplit="vertical"
 
 
-""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-"""""""""""""""""""""""""""""""" YouCompleteMe """""""""""""""""""""""""""""""""
-""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-let g:ycm_seed_identifiers_with_syntax = 1
-
-" close autocomplete window
-let g:ycm_autoclose_preview_window_after_completion=1
-
-" Use python3
-let g:ycm_python_binary_path = '/usr/bin/python3'
-
-" shortcut for go to definition
-map <leader>d  :YcmCompleter GoToDefinitionElseDeclaration<CR>
-
-
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 """"""""""""""""""""""""""""" VirtualEnv Support """"""""""""""""""""""""""""""
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
@@ -267,4 +252,16 @@ let g:indentLine_color_term = 236
 let g:indentLine_enabled = 1
 let g:indentLine_char = '┊'
 
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+"""""""""""""""""""""""""""""""" YouCompleteMe """""""""""""""""""""""""""""""""
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+let g:ycm_seed_identifiers_with_syntax = 1
 
+" close autocomplete window
+let g:ycm_autoclose_preview_window_after_completion=1
+
+" Use the current python (should work for the virtualenv activated too).
+let g:ycm_python_binary_path = '/home/mlima/.pyenv/versions/3.5.2/bin/python3.5'
+
+" shortcut for go to definition
+map <leader>d  :YcmCompleter GoToDefinitionElseDeclaration<CR>

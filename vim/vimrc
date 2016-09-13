@@ -65,10 +65,8 @@ set fileformat=unix
 let python_highlight_all=1
 
 " JS, HTML and CSS
-au BufNewFile,BufRead *.js, *.html, *.css
-    \ set tabstop=2
-    \ set softtabstop=2
-    \ set shiftwidth=2
+autocmd Filetype html,ccs,xml,javascript setlocal ts=2 sts=2 sw=2
+
 
 " toggle between modes almost instantly
 set ttimeoutlen=0
@@ -242,7 +240,7 @@ let g:ctrlp_user_command = ['.git/', 'git --git-dir=%s/.git ls-files -oc --exclu
 nmap <F8> :TagbarToggle<CR>
 
 " Set tags file directory: '.git/tags'
-set tags="$(git rev-parse --show-toplevel)/.git/tags"
+" set tags="$(git rev-parse --show-toplevel)/.git/tags"
 
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""

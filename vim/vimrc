@@ -28,6 +28,7 @@ Plugin 'vim-airline/vim-airline'
 Plugin 'vim-airline/vim-airline-themes'
 Plugin 'Yggdroot/indentLine'
 Plugin 'jmcantrell/vim-virtualenv'
+Plugin 'jistr/vim-nerdtree-tabs'
 
 
 call vundle#end()

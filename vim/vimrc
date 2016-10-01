@@ -144,6 +144,20 @@ augroup AutoReloadVimRC
 	au BufWritePost $MYVIMRC so $MYVIMRC
 augroup END
 
+" tabs
+map <leader>t gt
+map <leader>T gT
+map <leader>1 1gt
+map <leader>2 2gt
+map <leader>3 3gt
+map <leader>4 4gt
+map <leader>5 5gt
+map <leader>6 6gt
+map <leader>7 7gt
+map <leader>8 8gt
+map <leader>9 9gt
+map <leader>0 :tablast<CR>]
+
 syntax on
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
@@ -259,7 +273,7 @@ let g:ycm_seed_identifiers_with_syntax = 1
 let g:ycm_autoclose_preview_window_after_completion=1
 
 " Use the current python (should work for the virtualenv activated too).
-let g:ycm_python_binary_path = '/home/mlima/.pyenv/versions/3.5.2/bin/python3.5'
+let g:ycm_python_binary_path = 'python'
 
 " shortcut for go to definition
 map <leader>d  :YcmCompleter GoToDefinitionElseDeclaration<CR>

@@ -24,15 +24,14 @@ install-vim:
 	echo 'Set font terminal as Cousine Bold for Powerline'
 
 install-git:
-	echo 'alias g=git' >> ~/.bashrc
-	rm -rf ~/.gitconfig ~/.git_template
 	ln -s `pwd`/git/gitconfig ~/.gitconfig
-	mkdir -p ~/.git_template/hooks
-	git config --global init.templatedir '~/.git_template'
-	ln -s `pwd`/git/ctags ~/.git_template/hooks/ctags
-	sudo chmod +x `pwd`/git/ctags
-	ln -s `pwd`/git/post-commit ~/.git_template/hooks/post-commit
-	sudo chmod +x `pwd`/git/post-commit
+	#rm -rf ~/.gitconfig ~/.git_template
+	#mkdir -p ~/.git_template/hooks
+	#git config --global init.templatedir '~/.git_template'
+	#ln -s `pwd`/git/ctags ~/.git_template/hooks/ctags
+	#sudo chmod +x `pwd`/git/ctags
+	#ln -s `pwd`/git/post-commit ~/.git_template/hooks/post-commit
+	#sudo chmod +x `pwd`/git/post-commit
 
 install-autojump:
 	git clone https://github.com/wting/autojump.git /tmp/autojump

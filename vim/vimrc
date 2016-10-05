@@ -278,3 +278,9 @@ let g:ycm_python_binary_path = 'python'
 
 " shortcut for go to definition
 map <leader>d  :YcmCompleter GoTo<CR>
+
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+"""""""""""""""""""""""""""""""""" ctags """""""""""""""""""""""""""""""""""""""
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+"autocmd BufWritePost *.py,*.js silent! !eval 'ctags -R -o newtags; mv newtags tags'  2> /dev/null &
+map <leader>t :tselect /^

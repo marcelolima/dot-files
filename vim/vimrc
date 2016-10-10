@@ -279,8 +279,14 @@ let g:ycm_python_binary_path = 'python'
 " shortcut for go to definition
 map <leader>d  :YcmCompleter GoTo<CR>
 
+" Open definition on new tab
+let g:ycm_goto_buffer_command = 'new-tab'
+
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 """""""""""""""""""""""""""""""""" ctags """""""""""""""""""""""""""""""""""""""
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 "autocmd BufWritePost *.py,*.js silent! !eval 'ctags -R -o newtags; mv newtags tags'  2> /dev/null &
 map <leader>t :tselect /^
+
+" Open new buffer on new tab
+au BufAdd,BufNewFile * nested tab sball

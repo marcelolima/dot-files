@@ -300,7 +300,7 @@ set tags+=.git/pythonlib_tags
 :nnoremap <silent><Leader>c <C-w><C-]><C-w>T"
 
 if executable('ag')
-    let g:ackprg = 'ag --vimgrep'
+    let g:ackprg = 'ag --nogroup --nocolor --column --silent'
 endif
 
 map <leader>g :Ack 

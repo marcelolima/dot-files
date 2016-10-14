@@ -302,3 +302,5 @@ set tags+=.git/pythonlib_tags
 if executable('ag')
     let g:ackprg = 'ag --vimgrep'
 endif
+
+map <leader>g :Ack 

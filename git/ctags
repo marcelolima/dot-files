@@ -1,2 +1,3 @@
 #!/bin/sh
 .git/hooks/ctags_project
+.git/hooks/ctags_pythonlib

@@ -1,0 +1,8 @@
+#!/bin/sh
+set -e
+PATH="/usr/local/bin:$PATH"
+dir="`git rev-parse --git-dir`"
+echo "Running ctags on $dir/../node_modules"
+trap 'rm -f "$dir/$$.tags"' EXIT
+ctags -R --fields=+l --languages=python --python-kinds=-iv --exclude=.git -f"$dir/$$.tags" $dir/../node_modules/
+mv "$dir/$$.tags" "$dir/nodemodules_tags"

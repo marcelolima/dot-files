@@ -272,7 +272,7 @@ let g:indentLine_char = '┊'
 let g:ycm_autoclose_preview_window_after_completion=1
 
 " Use the current python (should work for the virtualenv activated too).
-"let g:ycm_python_binary_path = 'python'
+let g:ycm_python_binary_path = 'python'
 
 " shortcut for go to definition
 map <leader>d  :YcmCompleter GoTo<CR>

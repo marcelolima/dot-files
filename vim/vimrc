@@ -29,7 +29,7 @@ Plugin 'vim-airline/vim-airline-themes'
 Plugin 'Yggdroot/indentLine'
 Plugin 'jmcantrell/vim-virtualenv'
 Plugin 'jistr/vim-nerdtree-tabs'
-
+Plugin 'mileszs/ack.vim'
 
 call vundle#end()
 filetype plugin indent on
@@ -298,3 +298,7 @@ set tags+=.git/pythonlib_tags
 
 " Open new buffer on new tab
 :nnoremap <silent><Leader>c <C-w><C-]><C-w>T"
+
+if executable('ag')
+    let g:ackprg = 'ag --vimgrep'
+endif

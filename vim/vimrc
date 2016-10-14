@@ -19,7 +19,7 @@ Plugin 'nvie/vim-flake8'
 Plugin 'fatih/vim-go'
 Plugin 'scrooloose/syntastic'
 Plugin 'nsf/gocode', {'rtp': 'vim/'}
-Plugin 'Valloric/YouCompleteMe.git'
+"Plugin 'Valloric/YouCompleteMe.git'
 Plugin 'SirVer/ultisnips'
 Plugin 'honza/vim-snippets'
 Plugin 'vim-scripts/indentpython.vim'
@@ -289,9 +289,9 @@ let g:ycm_goto_buffer_command = 'new-tab'
 map <leader>t :tselect /^
 
 " set multiple tags destionations
-set tags+=.git/project_tags
+set tags+=.git/project_ctags
 "set tags+=.git/pythonlib_tags
 "set tags+=.git/nodemodules_tags
 
 " Open new buffer on new tab
-"au BufAdd,BufNewFile * nested tab sball
+:nnoremap <silent><Leader>d <C-w><C-]><C-w>T"

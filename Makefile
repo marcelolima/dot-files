@@ -25,13 +25,17 @@ install-vim:
 
 install-git:
 	ln -s `pwd`/git/gitconfig ~/.gitconfig
-	#rm -rf ~/.gitconfig ~/.git_template
-	#mkdir -p ~/.git_template/hooks
-	#git config --global init.templatedir '~/.git_template'
-	#ln -s `pwd`/git/ctags ~/.git_template/hooks/ctags
-	#sudo chmod +x `pwd`/git/ctags
-	#ln -s `pwd`/git/post-commit ~/.git_template/hooks/post-commit
-	#sudo chmod +x `pwd`/git/post-commit
+	rm -rf ~/.gitconfig ~/.git_template
+	git config --global init.templatedir '~/.git_template'
+	mkdir -p ~/.git_template/hooks
+	ln -s `pwd`/git/ctags ~/.git_template/hooks/ctags
+	chmod +x `pwd`/git/ctags
+	ln -s `pwd`/git/post-commit ~/.git_template/hooks/post-commit
+	ln -s `pwd`/git/post-checkout ~/.git_template/hooks/post-checkout
+	ln -s `pwd`/git/post-merge ~/.git_template/hooks/post-merge
+	chmod +x `pwd`/git/post-commit
+	chmod +x `pwd`/git/post-checkout
+	chmod +x `pwd`/git/post-commit
 
 install-autojump:
 	git clone https://github.com/wting/autojump.git /tmp/autojump
@@ -43,4 +47,3 @@ install-tmux:
 	rm -f ~/.tmux.conf
 	ln -s `pwd`/tmux/tmux.conf ~/.tmux.conf
 	tmux source-file ~/.tmux.conf
-

@@ -288,5 +288,10 @@ let g:ycm_goto_buffer_command = 'new-tab'
 "autocmd BufWritePost *.py,*.js silent! !eval 'ctags -R -o newtags; mv newtags tags'  2> /dev/null &
 map <leader>t :tselect /^
 
+" set multiple tags destionations
+set tags+=.git/project_tags
+"set tags+=.git/pythonlib_tags
+"set tags+=.git/nodemodules_tags
+
 " Open new buffer on new tab
-au BufAdd,BufNewFile * nested tab sball
+"au BufAdd,BufNewFile * nested tab sball

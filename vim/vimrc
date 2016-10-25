@@ -13,16 +13,13 @@ Plugin 'bronson/vim-trailing-whitespace'
 Plugin 'Raimondi/delimitMate'
 Plugin 'vim-scripts/leo256'
 Plugin 'fs111/pydoc.vim'
-Plugin 'dkprice/vim-easygrep'
 Plugin 'kien/ctrlp.vim'
 Plugin 'nvie/vim-flake8'
-Plugin 'fatih/vim-go'
 Plugin 'scrooloose/syntastic'
 Plugin 'nsf/gocode', {'rtp': 'vim/'}
 Plugin 'Valloric/YouCompleteMe.git'
 Plugin 'SirVer/ultisnips'
 Plugin 'honza/vim-snippets'
-Plugin 'vim-scripts/indentpython.vim'
 Plugin 'w0ng/vim-hybrid'
 Plugin 'vim-airline/vim-airline'
 Plugin 'vim-airline/vim-airline-themes'
@@ -30,6 +27,7 @@ Plugin 'Yggdroot/indentLine'
 Plugin 'jmcantrell/vim-virtualenv'
 Plugin 'jistr/vim-nerdtree-tabs'
 Plugin 'mileszs/ack.vim'
+
 
 call vundle#end()
 filetype plugin indent on
@@ -247,7 +245,6 @@ let NERDTreeIgnore=['\.pyc$', '\~$']
 " Ignore files from .gitignore on ctrlp plugin
 let g:ctrlp_user_command = ['.git/', 'git --git-dir=%s/.git ls-files -oc --exclude-standard']
 
-
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 """"""""""""""""""""""""""""""""""" TagBar """"""""""""""""""""""""""""""""""""
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
@@ -278,7 +275,7 @@ let g:ycm_python_binary_path = 'python'
 map <leader>d  :YcmCompleter GoTo<CR>
 
 " Open definition on new tab
-let g:ycm_goto_buffer_command = 'new-tab'
+let g:ycm_goto_buffer_command = 'new-or-existing-tab'
 let g:ycm_collect_identifiers_from_tags_files = 1 " Let YCM read tags from Ctags file
 let g:ycm_use_ultisnips_completer = 1 " Default 1, just ensure
 let g:ycm_seed_identifiers_with_syntax = 1 " Completion for programming language's keyword
@@ -303,4 +300,9 @@ if executable('ag')
     let g:ackprg = 'ag --nogroup --nocolor --column --silent'
 endif
 
-map <leader>g :Ack 
+
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+""""""""""""""""""""""""""""""" ack.vim / ag """""""""""""""""""""""""""""""""""
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+let g:ack_autoclose = 1
+map <leader>g :Ack! 

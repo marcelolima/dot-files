@@ -297,4 +297,5 @@ set tags+=.git/pythonlib_tags
 """"""""""""""""""""""""""""""" ack.vim / ag """""""""""""""""""""""""""""""""""
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 let g:ack_autoclose = 1
-map <leader>g :Ag -Q 
+map <leader>g :Ag -Q ""
+map ZX ZQ<CR>

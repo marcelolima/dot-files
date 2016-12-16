@@ -298,4 +298,5 @@ set tags+=.git/pythonlib_tags
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 let g:ack_autoclose = 1
 map <leader>g :Ag -Q ""
-map ZX ZQ<CR>
+map ZX ZZ<CR>
+map ZC ZQ<CR>

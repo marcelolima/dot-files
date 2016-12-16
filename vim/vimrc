@@ -27,7 +27,7 @@ Plugin 'Yggdroot/indentLine'
 Plugin 'jmcantrell/vim-virtualenv'
 Plugin 'jistr/vim-nerdtree-tabs'
 Plugin 'mileszs/ack.vim'
-Plugin 'mtscout6/syntastic-local-eslint.vim'
+Plugin 'mxw/vim-jsx'
 
 call vundle#end()
 filetype plugin indent on
@@ -62,10 +62,6 @@ set expandtab
 set autoindent
 set fileformat=unix
 let python_highlight_all=1
-
-" JS, HTML and CSS
-autocmd Filetype html,ccs,xml,javascript setlocal ts=2 sts=2 sw=2
-
 
 " toggle between modes almost instantly
 set ttimeoutlen=0

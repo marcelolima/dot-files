@@ -252,6 +252,8 @@ map <leader>c :Commits<CR>
 map <leader>a :Ag<CR>
 map <leader>j :tab split<CR>:exec("tag ".expand("<cword>"))<CR>
 map <leader>s :vsp <CR>:exec("tag ".expand("<cword>"))<CR>")")
+map <leader>d <C-]>
+map <leader>dd g]
 map <leader>q :q<CR>
 map <leader>w :w<CR>
 map <leader>wq :wq<CR>

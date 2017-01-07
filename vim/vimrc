@@ -248,5 +248,4 @@ map <leader>b :Buffers<CR>
 map <leader>l :Lines<CR>
 map <leader>c :Commits<CR>
 map <leader>a :Ag<CR>
-
-
+map <leader>a :GFiles?<CR>

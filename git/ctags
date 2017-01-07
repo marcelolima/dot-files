@@ -7,6 +7,6 @@ git ls-files | \
       ctags --tag-relative -L - -f"$dir/$$.tags" --languages=-sql \
       --exclude='node_modules*' --exclude='static*' --exclude='docs*' \
       --exclude='docs*' --exclude='logs*' --exclude='static_files*' \
-      --exclude='*/migrations/*' --exclude='*/tests/*'
+      --exclude='*/migrations/*' --exclude='*/tests/*' --exclude='*\.min\.*'
 
 mv "$dir/$$.tags" "$dir/tags"

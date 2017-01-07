@@ -33,7 +33,7 @@ filetype plugin indent on
 """""""""""""""""""""""""""" GENERAL SETTINGS """""""""""""""""""""""""""""""""
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Set <leader> hotkey as space
-let mapleader = " "
+let mapleader = ","
 
 " Show line number
 set relativenumber
@@ -257,3 +257,4 @@ map <leader>dd g]
 map <leader>q :q<CR>
 map <leader>w :w<CR>
 map <leader>wq :wq<CR>
+let $FZF_DEFAULT_COMMAND = 'ag -l -g ""'

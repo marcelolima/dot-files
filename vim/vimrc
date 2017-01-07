@@ -3,7 +3,8 @@ filetype off
 
 set rtp+=~/.vim/bundle/Vundle.vim
 call vundle#begin()
-
+Plugin 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
+Plugin 'junegunn/fzf.vim'
 Plugin 'gmarik/Vundle.vim'
 Plugin 'tpope/vim-fugitive'
 Plugin 'scrooloose/nerdtree'
@@ -12,18 +13,14 @@ Plugin 'majutsushi/tagbar'
 Plugin 'bronson/vim-trailing-whitespace'
 Plugin 'Raimondi/delimitMate'
 Plugin 'vim-scripts/leo256'
-Plugin 'fs111/pydoc.vim'
-Plugin 'kien/ctrlp.vim'
 Plugin 'nvie/vim-flake8'
 Plugin 'scrooloose/syntastic'
 Plugin 'nsf/gocode', {'rtp': 'vim/'}
-Plugin 'Valloric/YouCompleteMe.git'
 Plugin 'SirVer/ultisnips'
 Plugin 'honza/vim-snippets'
 Plugin 'w0ng/vim-hybrid'
 Plugin 'vim-airline/vim-airline'
 Plugin 'vim-airline/vim-airline-themes'
-Plugin 'Yggdroot/indentLine'
 Plugin 'jmcantrell/vim-virtualenv'
 Plugin 'jistr/vim-nerdtree-tabs'
 Plugin 'mxw/vim-jsx'
@@ -237,66 +234,19 @@ let NERDTreeIgnore=['\.pyc$', '\~$']
 
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-"""""""""""""""""""""""""""""""""""" CtrlP """"""""""""""""""""""""""""""""""""
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" Ignore files from .gitignore on ctrlp plugin
-let g:ctrlp_user_command = ['.git/', 'git --git-dir=%s/.git ls-files -oc --exclude-standard']
-
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 """"""""""""""""""""""""""""""""""" TagBar """"""""""""""""""""""""""""""""""""
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Toggle tagbar with F8
 nmap <F8> :TagbarToggle<CR>
 
-" Set tags file directory: '.git/tags'
-" set tags="$(git rev-parse --show-toplevel)/.git/tags"
-
-
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-""""""""""""""""""""""""""""""""" identLine """""""""""""""""""""""""""""""""""
+""""""""""""""""""""""""""""""""""" FZF """""""""""""""""""""""""""""""""""""""
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-let g:indentLine_color_term = 236
-let g:indentLine_enabled = 1
-let g:indentLine_char = '┊'
+map <leader>f :Files<CR>
+map <leader>t :Tags<CR>
+map <leader>b :Buffers<CR>
+map <leader>l :Lines<CR>
+map <leader>c :Commits<CR>
+map <leader>a :Ag<CR>
 
-""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-"""""""""""""""""""""""""""""""" YouCompleteMe """""""""""""""""""""""""""""""""
-""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" close autocomplete window
-let g:ycm_autoclose_preview_window_after_completion=1
 
-" Use the current python (should work for the virtualenv activated too).
-let g:ycm_python_binary_path = 'python'
-
-" shortcut for go to definition
-map <leader>d  :YcmCompleter GoTo<CR>
-
-" Open definition on new tab
-let g:ycm_goto_buffer_command = 'new-or-existing-tab'
-let g:ycm_collect_identifiers_from_tags_files = 1 " Let YCM read tags from Ctags file
-let g:ycm_use_ultisnips_completer = 1 " Default 1, just ensure
-let g:ycm_seed_identifiers_with_syntax = 1 " Completion for programming language's keyword
-let g:ycm_complete_in_comments = 1 " Completion in comments
-let g:ycm_complete_in_strings = 1 " Completion in string
-
-""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-"""""""""""""""""""""""""""""""""" ctags """""""""""""""""""""""""""""""""""""""
-""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-"autocmd BufWritePost *.py,*.js silent! !eval 'ctags -R -o newtags; mv newtags tags'  2> /dev/null &
-map <leader>t :tselect /^
-
-" set multiple tags destionations
-set tags+=.git/project_ctags
-set tags+=.git/pythonlib_tags
-"set tags+=.git/nodemodules_tags
-
-" Open new buffer on new tab
-:nnoremap <silent><Leader>c <C-w><C-]><C-w>T"
-
-""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-""""""""""""""""""""""""""""""" ack.vim / ag """""""""""""""""""""""""""""""""""
-""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-let g:ack_autoclose = 1
-map <leader>g :Ag -Q ""
-map ZX ZZ<CR>
-map ZC ZQ<CR>

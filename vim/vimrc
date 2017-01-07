@@ -38,6 +38,7 @@ let mapleader = " "
 " Show line number
 set relativenumber
 set number
+set complete-=i
 
 " Set history
 set history=1000

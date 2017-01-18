@@ -12,19 +12,17 @@ Plugin 'terryma/vim-multiple-cursors'
 Plugin 'majutsushi/tagbar'
 Plugin 'bronson/vim-trailing-whitespace'
 Plugin 'Raimondi/delimitMate'
-Plugin 'vim-scripts/leo256'
 Plugin 'nvie/vim-flake8'
+Plugin 'w0ng/vim-hybrid'
 Plugin 'scrooloose/syntastic'
 Plugin 'nsf/gocode', {'rtp': 'vim/'}
 Plugin 'SirVer/ultisnips'
 Plugin 'honza/vim-snippets'
-Plugin 'w0ng/vim-hybrid'
-Plugin 'vim-airline/vim-airline'
-Plugin 'vim-airline/vim-airline-themes'
 Plugin 'jmcantrell/vim-virtualenv'
 Plugin 'jistr/vim-nerdtree-tabs'
 Plugin 'mxw/vim-jsx'
 Plugin 'epmatsw/ag.vim'
+Plugin 'itchyny/lightline.vim'
 
 call vundle#end()
 filetype plugin indent on
@@ -32,6 +30,7 @@ filetype plugin indent on
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 """""""""""""""""""""""""""" GENERAL SETTINGS """""""""""""""""""""""""""""""""
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+set background=dark
 " Set <leader> hotkey as space
 let mapleader = ","
 
@@ -47,8 +46,7 @@ set history=1000
 set encoding=utf8
 
 " Set colorscheme
-set background=dark
-colorscheme hybrid
+colorscheme delek
 
 " Enable mouse:
 set mouse=a
@@ -74,8 +72,9 @@ hi CursorLine ctermbg=235
 hi CursorLineNr ctermfg=yellow
 
 " Set ColorColumn
-set cc=80
-hi ColorColumn ctermbg=235
+"set cc=80
+hi ColorColumn ctermbg=253
+
 
 " Set String background null
 hi String ctermbg=None
@@ -117,6 +116,9 @@ set tm=500
 set nobackup
 set nowb
 set noswapfile
+
+" For lightline.vim
+set laststatus=2
 
 " Map :noh command to F3
 map <F3> :noh<CR>
@@ -218,15 +220,6 @@ let g:virtualenv_auto_activate = 1
 
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-""""""""""""""""""""""""""""""""" Airline """""""""""""""""""""""""""""""""""""
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-let g:airline_powerline_fonts = 1
-let g:airline_theme = 'ubaryd'
-set laststatus=2
-set t_Co=256
-
-
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 """""""""""""""""""""""""""""""""" NerdTree """""""""""""""""""""""""""""""""""
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " show/hide NERDTree pressing F2
@@ -245,13 +238,15 @@ nmap <F8> :TagbarToggle<CR>
 """"""""""""""""""""""""""""""""""" FZF """""""""""""""""""""""""""""""""""""""
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 map <leader>f :Files<CR>
+map <leader>tb :BTags<CR>
 map <leader>t :Tags<CR>
 map <leader>b :Buffers<CR>
-map <leader>l :Lines<CR>
+map <leader>l :Lines 
+map <leader>lb :BLines 
 map <leader>c :Commits<CR>
 map <leader>a :Ag 
 map <leader>j :tab split<CR>:exec("tag ".expand("<cword>"))<CR>
-map <leader>s :vsp <CR>:exec("tag ".expand("<cword>"))<CR>")")
+map <leader>v :vsp <CR>:exec("tag ".expand("<cword>"))<CR>")")
 map <leader>d <C-]>
 map <leader>dd g]
 map <leader>q :q<CR>

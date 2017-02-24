@@ -23,6 +23,8 @@ Plugin 'jistr/vim-nerdtree-tabs'
 Plugin 'mxw/vim-jsx'
 Plugin 'epmatsw/ag.vim'
 Plugin 'itchyny/lightline.vim'
+Plugin 'morhetz/gruvbox'
+Plugin 'sickill/vim-monokai'
 
 call vundle#end()
 filetype plugin indent on
@@ -46,7 +48,7 @@ set history=1000
 set encoding=utf8
 
 " Set colorscheme
-colorscheme delek
+colorscheme monokai
 
 " Enable mouse:
 set mouse=a
@@ -74,10 +76,7 @@ hi CursorLineNr ctermfg=yellow
 " Set ColorColumn
 "set cc=80
 hi ColorColumn ctermbg=253
-
-
-" Set String background null
-hi String ctermbg=None
+hi Search ctermfg=yellow
 
 " set the terminal title to the current file
 set title
@@ -90,7 +89,6 @@ set smartcase
 
 " Highlight search results:
 set hlsearch
-hi Search cterm=NONE ctermfg=grey ctermbg=blue
 
 " show search results as you type
 set incsearch

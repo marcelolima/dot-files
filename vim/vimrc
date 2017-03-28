@@ -34,7 +34,7 @@ filetype plugin indent on
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 set background=dark
 " Set <leader> hotkey as space
-let mapleader = ","
+let mapleader = " "
 
 " Show line number
 set relativenumber
@@ -251,3 +251,15 @@ map <leader>q :q<CR>
 map <leader>w :w<CR>
 map <leader>wq :wq<CR>
 let $FZF_DEFAULT_COMMAND = 'ag -l -g ""'
+
+" Disable Arrow keys in Escape mode
+map <up> <nop>
+map <down> <nop>
+map <left> <nop>
+map <right> <nop>
+
+" Disable Arrow keys in Insert mode
+imap <up> <nop>
+imap <down> <nop>
+imap <left> <nop>
+imap <right> <nop>

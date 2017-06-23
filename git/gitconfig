@@ -38,6 +38,7 @@
     rh = reset --hard
     pl = pull
     ps = push
+    pu = push -u origin HEAD
 [rerere]
 	enabled = 1
 	autoupdate = true

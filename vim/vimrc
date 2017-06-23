@@ -25,6 +25,8 @@ Plugin 'epmatsw/ag.vim'
 Plugin 'itchyny/lightline.vim'
 Plugin 'morhetz/gruvbox'
 Plugin 'sickill/vim-monokai'
+Plugin 'tomtom/tcomment_vim'
+Plugin 'easymotion/vim-easymotion'
 
 call vundle#end()
 filetype plugin indent on
@@ -34,7 +36,8 @@ filetype plugin indent on
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 set background=dark
 " Set <leader> hotkey as space
-let mapleader = " "
+
+let mapleader = ","
 
 " Show line number
 set relativenumber
@@ -243,6 +246,7 @@ map <leader>l :Lines
 map <leader>lb :BLines 
 map <leader>c :Commits<CR>
 map <leader>a :Ag 
+map <leader>aa :Ag <cword><cr>
 map <leader>j :tab split<CR>:exec("tag ".expand("<cword>"))<CR>
 map <leader>v :vsp <CR>:exec("tag ".expand("<cword>"))<CR>")")
 map <leader>d <C-]>
@@ -252,14 +256,7 @@ map <leader>w :w<CR>
 map <leader>wq :wq<CR>
 let $FZF_DEFAULT_COMMAND = 'ag -l -g ""'
 
-" Disable Arrow keys in Escape mode
-map <up> <nop>
-map <down> <nop>
-map <left> <nop>
-map <right> <nop>
-
-" Disable Arrow keys in Insert mode
-imap <up> <nop>
-imap <down> <nop>
-imap <left> <nop>
-imap <right> <nop>
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+""""""""""""""""""""""""""""""""""" easymotion """"""""""""""""""""""""""""""""
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" let g:EasyMotion_leader_key = '<Leader>'

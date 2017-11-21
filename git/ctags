@@ -4,7 +4,7 @@ PATH="/usr/local/bin:$PATH"
 dir="`git rev-parse --git-dir`"
 trap 'rm -f "$dir/$$.tags"' EXIT
 git ls-files | \
-      ctags --tag-relative -L - -f"$dir/$$.tags" --languages=-sql \
+      ctags --python-kinds=-i --tag-relative -L - -f"$dir/$$.tags" --languages=-sql \
       --exclude='node_modules*' --exclude='static*' --exclude='docs*' \
       --exclude='docs*' --exclude='logs*' --exclude='static_files*' \
       --exclude='*/migrations/*' --exclude='*/tests/*' --exclude='*\.min\.*'

@@ -26,7 +26,7 @@ Plugin 'itchyny/lightline.vim'
 Plugin 'morhetz/gruvbox'
 Plugin 'sickill/vim-monokai'
 Plugin 'tomtom/tcomment_vim'
-Plugin 'easymotion/vim-easymotion'
+Plugin 'brooth/far.vim'
 
 call vundle#end()
 filetype plugin indent on
@@ -77,9 +77,7 @@ hi CursorLine ctermbg=235
 hi CursorLineNr ctermfg=yellow
 
 " Set ColorColumn
-"set cc=80
 hi ColorColumn ctermbg=253
-hi Search ctermfg=yellow
 
 " set the terminal title to the current file
 set title
@@ -92,6 +90,7 @@ set smartcase
 
 " Highlight search results:
 set hlsearch
+hi Search ctermbg=LightBlue
 
 " show search results as you type
 set incsearch

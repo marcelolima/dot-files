@@ -39,6 +39,8 @@
     pl = pull
     ps = push
     pu = push -u origin HEAD
+    open = "!f(){ open `git remote -v | awk '/fetch/{print $2}' | sed -Ee 's#(git@|git://)#http://#' -e 's@com:@com/@'`| head -n1; }; f"
+
 [rerere]
 	enabled = 1
 	autoupdate = true
@@ -48,3 +50,6 @@
 	default = simple
 [init]
 	templatedir = ~/.git_template
+[user]
+	name = Marcelo Lima
+	email = mcdlima@gmail.com
